@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+<body>
+    <button id="dados">Insira seu salário atual</button>
+    <br>
+    <br>
+    <label id="salarioAtual">Salário Atual: </label><br><br>
+    <label id="salarioComAumento">Salário com Aumento:</label><br><br>
+    <label id="salarioFinal">Salário Final:</label><br><br>
+
+</body>
+<script>
+    var entrada = document.querySelector('#dados');
+    var saida = document.querySelector('#salarioAtual');
+    var saida2 = document.querySelector('#salarioComAumento');
+    var saida3 = document.querySelector('#salarioFinal');
+
+    entrada.addEventListener('click', salario);
+
+    function salario(){
+        var salarioAtual = parseInt(prompt("Informe seu Salário Atual"));
+        var salarioComAumento = (salarioAtual) + salarioAtual * 0.15;
+        var salarioFinal = (salarioComAumento) - salarioComAumento * 0.08;
+
+        saida.textContent = "Salário Atual "+ salarioAtual;
+        saida2.textContent = "Salário com Aumento: "+ salarioComAumento;
+        saida3.textContent = "Salário Final: "+ salarioFinal;
+
+    }
+</script>
+</html>

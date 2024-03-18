@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+body {
+    background-image: url("https://th.bing.com/th/id/R.037c669e61530197ae9323b5f4b9dc5c?rik=zJVHj277Xn%2f%2bJQ&pid=ImgRaw&r=0");
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    color:maroon;
+    background-color: goldenrod;
+}
+
+h2 {
+    color: darkred;
+}
+
+p {
+    text-align: justify;
+    
+}
+
+a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 15px;
+    border: 3px solid red;
+    border-radius: 15px;
+}

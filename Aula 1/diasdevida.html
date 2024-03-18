@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+<body>
+    <button id="dados">Clique para informar nome e idade</button>
+    <br>
+    <br>
+    <label id="resultado">Aguarde Resultado</label>
+</body>
+<script>
+    var entrada = document.querySelector('#dados');
+    var saida = document.querySelector('#resultado');
+
+    entrada.addEventListener('click', diasDeVida);
+
+    function diasDeVida(){
+        var nome = prompt("Informe seu nome");
+        var idade = prompt("Informe sua idade");
+        var resultado = idade * 365;
+        saida.textContent = "Olá, "+ nome +", você já viveu "+ resultado +" dias."
+    }
+</script>
+</html>
