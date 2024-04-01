@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECINFO - 17</title>
+
+    <link rel="shortcut icon" href="assets/logoWhite.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/principal.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/componente.css">
+    <link rel="stylesheet" href="./css/mensagens.css">
+    <!-- Abaixo segue o escript da página -->
+    <script src="./js/calcula-media.js" defer></script>
+    <script src="/js/form-aluno.js" defer></script>
+    <script src="/js/excluir-aluno.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="caixa">
+            <h1 class="titulo-pagina">Senac Taboão</h1>
+        </div>
+    </header>
+    <main>
+        <div class="caixa">
+            <h2 class="titulo-h2">Lista de alunos</h2>
+            <form action="" class="aluno">
+            <table id="tabela-alunos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Trabalho</th>
+                        <th>Prova</th>
+                        <th>Média</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="aluno">
+                        <td class="td-nome">Alexandre</td>
+                        <td class="td-trabalho">5.5</td>
+                        <td class="td-prova">7.5</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="td-nome">Aliston</td>
+                        <td class="td-trabalho">8.0</td>
+                        <td class="td-prova">5.5</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="td-nome">Bruno</td>
+                        <td class="td-trabalho">9.5</td>
+                        <td class="td-prova">10.0</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="td-nome">Roberto</td>
+                        <td class="td-trabalho">8.0</td>
+                        <td class="td-prova">7.0</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="td-nome">Caique</td>
+                        <td class="td-trabalho">6.0</td>
+                        <td class="td-prova">9.5</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="td-nome">Henrique</td>
+                        <td class="td-trabalho">5.2</td>
+                        <td class="td-prova">7.8</td>
+                        <td class="td-media">0</td>
+                        <td class="td-acoes">
+                            <span class="btn-excluir">
+                                Excluir
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+    </main>
+    <section class="caixa">
+            <h2 class="titulo-h2">Cadastro de Aluno</h2>
+            <form id="frmAluno">
+                <div class="row">
+                    <div id="divMensagens">
+                        <!-- Div para mensagens do formulário -->
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="txtNome">Nome:</label><br>
+                    <input id="txtNome" type="text" name="nome" placeholder="Informe o nome do aluno">
+                </div>
+                <div class="input">
+                    <label for="txtTrabalho">Nota do trabalho:</label><br>
+                    <input id="txtTrabalho" type="number" name="trabalho" placeholder="Nota do trabalho">
+                </div>
+                <div class="input">
+                    <label for="txtProva" name="prova">Nota da prova:</label><br>
+                    <input id="txtProva" type="number" name="prova" placeholder="Nota da prova">
+                </div>
+                <!-- A seguir o botão de salvar aluno -->
+                <button id="btnSalvarAluno" type="submit">Salvar</button>
+            </form> 
+    </section>
+</body>
+</html>
