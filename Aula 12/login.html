@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/gerais.css">
+    <link rel="stylesheet" href="styles/login.css">
+        <title>Tela de Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Senac - Taboão da Serra</h2><hr>
+        <h1>Login</h1>
+        
+        <form action="#" method="post">
+            <input type="text" name="username" id="loginTxt" placeholder="Informe o e-mail cadastrado" required><br>
+            <input type="password" name="password" id="senhaTxt" placeholder="Informe sua senha" required><br>
+            <button type="submit" id="btnEntrar">Entrar</button>
+            <button type="button" class="cancel" id="btnCancelar"><a href="index.html">Cancelar</a></button>
+        </form>
+    </div>    
+</body>
+<script>
+    var btnEnviar = document.querySelector('#btnEntrar');
+    btnEnviar.addEventListener('click', async function (event) {
+        event.preventDefault();
+        
+        usuario = document.querySelector('#loginTxt').value;
+        senha = document.querySelector('#senhaTxt').value;
+
+        const config = {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nomeJs: usuario, 
+                // password: senha
+            })
+        };
+        
+        const response = await fetch('controller/controllerLogin.php', config);
+        const require = await response.json();
+
+        alert(require.status);
+ 
+        if(require.status == 1){
+            alert(require.dados.nome_completo)
+            // alert(require.dados.senha)
+            window.location.href = 'contatos.html'
+        }
+    });
+</script>
+</html>
