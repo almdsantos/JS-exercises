@@ -25,7 +25,7 @@
             <input type="number" id="telefone" name="telefone" placeholder="Informe o seu telefone" ><br>
 
             <input type="password" id="senha" name="senha" placeholder="Informe a sua senha" ><br>
-            <input type="password" name="senha" placeholder="Confirme a sua senha" ><br>
+            <!-- <input type="password" name="senha" placeholder="Confirme a sua senha" ><br> -->
 
             <div class="button">
                 <a href="index.html"><input id="cancel" type="button" name="cancelar" value="CANCELAR"></a>
@@ -63,8 +63,7 @@
             const request = await fetch('controller/controllerCadastro.php', config);
             const response = await request.json();
 
-            alert(response.nome);
-            alert(response.dataNasc);
+            alert(response.status == 1);
             }
         )
     </script>

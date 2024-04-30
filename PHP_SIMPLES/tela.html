@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txtNome">
+    <input type="text" name="" id="txtSenha">
+    <button id="uva">ok</button>
+
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody id="conteudo-usuario"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var btnOk = document.querySelector("#uva")
+    btnOk.addEventListener('click', async function (event) {
+        event.preventDefault();
+        var nome = document.querySelector("#txtNome").value
+        var senha = document.querySelector("#txtSenha").value
+
+        const config = {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nomeJS: nome,
+                senhaJs: senha
+
+            })
+        }
+        const request = await fetch('controller.php', config);
+        const response = await request.json();
+
+        const conteudoUsuario = document.getElementById('conteudo-usuario');
+        
+        for (const abobora of response.dados) {
+            conteudoUsuario.innerHTML += `
+        <tr>
+          <td>${abobora.id}</td>
+          <td>${abobora.nome_banco}</td>
+          <td>${abobora.senha_banco}</td>
+        </tr>`;
+        }
+
+
+    })
+</script>
+
+</html>
