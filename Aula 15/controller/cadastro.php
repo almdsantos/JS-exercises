@@ -1,7 +1,7 @@
 <?php
 
     require_once('../configuracao/conexao.php');
-    require_once('../configuracao/modelCadastro.php');
+    require_once('../configuracao/model.php');
 
     $json = file_get_contents('php://input');
     $reqbody = json_decode($json);
@@ -14,9 +14,9 @@
     //Criando um objeto da classe conexão;
     $conexao = new Conexao();
     // Criando uma variavel que ira receber o método abrirConexao atraves do obj conexao
-    $acesso = $conexao->abrirConexao();
+    $conexaoDB = $conexao->abrirConexao();
     // Criando um objeto ModelUsuario
-    $a = new ModelCadastro($acesso);
+    $a = new Model($conexaoDB);
 
 
     $a->nome = $nome;
@@ -26,6 +26,6 @@
     $a->senha = $password;
 
     
-    $retorno = $a->acessoRetorno();
+    $retorno = $a->cadastro();
     echo json_encode($retorno);
 ?>

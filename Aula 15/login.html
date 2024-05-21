@@ -13,8 +13,8 @@
         <h1>Login</h1>
         
         <form action="#" method="post">
-            <input type="text" name="username" id="loginTxt" placeholder="Informe o usuário cadastrado" required><br>
-            <input type="password" name="password" id="senhaTxt" placeholder="Informe sua senha" required><br>
+            <input type="text" name="username" id="loginTxt" placeholder="Informe o email cadastrado" required><br>
+            <input type="password" name="current-password" id="senhaTxt" placeholder="Informe sua senha" required><br>
             <button type="submit" id="btnEntrar">Entrar</button>
             <button type="button" class="cancel" id="btnCancelar"><a href="index.html">Cancelar</a></button>
         </form>
@@ -40,11 +40,13 @@
             })
         };
         
-        const response = await fetch('controller/controllerLogin.php', config);
+        const response = await fetch('controller/login.php', config);
         const require = await response.json();
  
         if(require.status == 1){
             window.location.href = 'contatos.html'
+        } else{
+            alert(require.status)
         }
     });
 </script>

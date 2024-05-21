@@ -59,11 +59,11 @@
                     senhaJS: senha
                 })
             }
-            const request = await fetch('controller/controllerCadastro.php', config);
-            const response = await request.json();
+            const request = await fetch('controller/cadastro.php', config);
+            const require = await request.json();
 
-                if (response.status == 1){
-                    alert("Foi");
+                if (require.status == 1){
+                    alert("Cadastrado com sucesso");
                 }
             }
         )
