@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/gerais.css">
     <link rel="stylesheet" href="styles/login.css">
-        <title>Tela de Login</title>
+    <title>Tela de Login</title>
 </head>
 <body>
     <div class="login-container">
         <h2>Senac - Taboão da Serra</h2><hr>
         <h1>Login</h1>
-        
-        <form action="#" method="post">
-            <input type="text" name="username" id="loginTxt" placeholder="Informe o email cadastrado" required><br>
-            <input type="password" name="current-password" id="senhaTxt" placeholder="Informe sua senha" required><br>
-            <button type="submit" id="btnEntrar">Entrar</button>
-            <button type="button" class="cancel" id="btnCancelar"><a href="index.html">Cancelar</a></button>
-        </form>
+        <div class="box">
+            <form action="#" method="post">
+                <div class="inputBox">
+                    <input type="text" name="username" id="loginTxt" class="inputUser" required>
+                    <label class="label_input" for="nome">E-mail cadastrado</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="current-password" id="senhaTxt" class="inputUser" required>
+                    <label class="label_input" for="nome">Informe sua senha</label>
+                </div>
+                <button class="btnSubmit" type="submit" id="btnEntrar">Entrar</button>
+                <button class="btnCancel" type="button" class="cancel" id="btnCancelar"><a href="index.html">Cancelar</a></button>
+            </form>
+        </div>
     </div>    
 </body>
 <script>

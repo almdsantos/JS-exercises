@@ -12,25 +12,33 @@
         <h2>Senac - Taboão da Serra</h2><hr>
         <h1>CADASTRO</h1>
         <form action="#" method="post">
-            <label for="nome">Nome</label><br>
-            <input type="text" id="nome" name="nome" placeholder="Informe o seu nome" required><br>
-
-            <label for="dataNasc">Data de Nascimento</label><br>
-            <input type="date" id="dataNasc" name="dataNasc"><br>
-
-            <label for="email">E-mail</label><br>
-            <input type="email" id="email" name="email" placeholder="Informe o seu e-mail" ><br>
-
-            <label for="telefone">Telefone</label><br>
-            <input type="number" id="telefone" name="telefone" placeholder="Informe o seu telefone" ><br>
-
-            <input type="current-password" id="senha" name="senha" placeholder="Informe a sua senha" ><br>
-
-            <div class="button">
-                <a href="index.html"><input id="cancel" type="button" name="cancelar" value="CANCELAR"></a>
-                <input id="submit" type="submit" name="confirmar" value="CONFIRMAR">
+            <div class="inputBox">
+                <input type="text" id="nome" name="nome" class="inputUser" required>
+                <label class="label_input" for="nome">Nome</label>
             </div>
-
+            <div class="inputBox">
+                <input type="date" id="dataNasc" name="dataNasc" class="inputUser" required>
+            </div>
+            <div class="inputBox">
+                <input type="email" id="email" name="email" class="inputUser" required>
+                <label class="label_input" for="email">Informe o seu e-mail</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" id="telefone" name="telefone" class="inputUser" required>
+                <label class="label_input" for="telefone">Informe o seu telefone</label>
+            </div>
+            <div class="inputBox">
+                <input type="current-password" id="senha" name="senha" class="inputUser" required>
+                <label class="label_input" for="senha">Informe a sua senha</label>
+            </div>
+            <div class="inputBox">
+                <input type="current-password" id="senha" name="senha" class="inputUser" required>
+                <label class="label_input" for="senha">Confirme a sua senha</label>
+            </div>
+            <div class="box">
+                <button class="btnSubmit" type="submit" id="submit" name="confirmar">Cadastrar</button>
+                <button class="btnCancel" type="button" class="cancel" id="btnCancelar" name="cancelar"><a href="index.html">Cancelar</a></button>
+            </div>
         </form>
     </div>
 
