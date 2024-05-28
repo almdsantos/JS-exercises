@@ -1,0 +1,37 @@
+form {
+    font-size: 25px;
+    text-align: center;
+}
+
+form input{
+    font-size: 20px;
+    height: 30px;
+    width: 70%;
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button #cancel, .button #submit {
+    width: 150px;
+}
+
+@media (max-width: 1440px) {
+    form {
+        font-size: 15px;
+    }
+    .button #cancel, .button #submit {
+        width: 130px;
+    }
+
+}

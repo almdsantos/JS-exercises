@@ -1,0 +1,34 @@
+img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+#cadastro{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    text-decoration: none;
+}
+
+#logar{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+button {
+    font-size: 20px;
+    width: 200px;
+    text-decoration: none;
+}
+
+@media (max-width: 1440px) {
+    #logar{
+        margin-top: 20px;
+    }
+
+}

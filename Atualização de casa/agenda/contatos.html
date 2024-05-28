@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar</title>
+    <link rel="stylesheet" href="styles/gerais.css">
+    <link rel="stylesheet" href="styles/contatos.css">
+</head>
+<body >
+    <div class="login-container">
+        <div class="acoes">
+            <button id="botaoVoltar"><img src="assets/home.png" alt=""></button>
+            <input type="text" id="usr" placeholder="Pesquisa de Usuário">
+            <button id="botaoAtualizar"><img src="assets/atualizar.png" alt=""></button>            
+        </div>
+        <div id="box-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="id">ID</th>
+                        <th class="nome">Nome</th>
+                        <th class="nasc">Nascimento</th>
+                        <th class="email">E-mail</th>
+                        <th class="tel">Telefone</th>
+                        <th class="acao" colspan="2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    async function consultar(){
+        const response = await fetch('controller/contatos.php', {method: 'get'})
+        const require = await response.json()
+        const tabela = document.getElementById("table");
+        for(const item of require.dados){
+            tabela.innerHTML += `
+            <tr>
+                <td class="id">${item.id}</td>
+                <td class="nome">${item.nome_completo}</td>
+                <td  class="nasc">${item.data_nasc}</td>
+                <td  class="email">${item.email}</td>
+                <td  class="tel">${item.telefone}</td>
+                <td class="btnAcao"><button onclick="editar(${item.id})" class="editar">Editar</button></td>
+                <td class="btnAcao"><button onclick="excluir(${item.id})">Excluir</button></td>
+            </tr>
+            `
+        }    
+    }
+    consultar()
+
+    const botaoAtualizar = document.getElementById('botaoAtualizar')
+
+
+    botaoAtualizar.addEventListener('click', function(){
+        window.location.reload()
+    })
+
+    const botaoVoltar = document.getElementById('botaoVoltar');
+
+    botaoVoltar.addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+
+    // FUNÇÕES
+
+    function editar(id){
+        window.location.href = `editar.html?id=${id}`
+    }
+
+    func
+
+</script>
+</html>
